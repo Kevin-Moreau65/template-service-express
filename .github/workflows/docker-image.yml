@@ -32,13 +32,21 @@ jobs:
         push: true
         tags: ${{ secrets.DOCKER_USERNAME }}/test-ci:${{github.sha}}
     -
+      name: Checkout Target Repository
+      uses: actions/checkout@v3
+      with:
+        repository: Kevin-Moreau65/Infra-AKS-PFE
+        path: infrastructure
+        token: ${{ secrets.TOKEN_GIT }} 
+    -
       name: Update values.yaml
       uses: fjogeleit/yaml-update-action@main
       with:
-        valueFile: 'deployment/deployment.yaml'
+        valueFile: 'test/deployment.yaml'
         propertyPath: 'spec.template.spec.containers[0].image'
         value: ${{ secrets.DOCKER_USERNAME }}/test-ci:${{github.sha}}
-        createPR: true
+        commitChange: true
         branch: main
-        title: "Update"
+        repository: Kevin-Moreau65/infra-aks-pfe
+        message: "Updated test"
         token: ${{secrets.TOKEN_GIT}}
