@@ -36,7 +36,7 @@ jobs:
       uses: actions/checkout@v3
       with:
         repository: Kevin-Moreau65/Infra-AKS-PFE
-        path: infrastructure
+        path: other-repo
         token: ${{ secrets.TOKEN_GIT }} 
     -
       name: Update values.yaml
@@ -50,3 +50,4 @@ jobs:
         repository: Kevin-Moreau65/infra-aks-pfe
         message: "Updated test"
         token: ${{secrets.TOKEN_GIT}}
+        workDir: other-repo
