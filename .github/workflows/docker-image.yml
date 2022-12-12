@@ -38,4 +38,7 @@ jobs:
         valueFile: 'deployment/deployment.yaml'
         propertyPath: 'spec.template.spec.containers[0].image'
         value: ${{ secrets.DOCKER_USERNAME }}/test-ci:${{github.sha}}
-        commitChange: true
+        createPR: true
+        branch: main
+        title: "Update"
+        token: ${{secrets.TOKEN_GIT}}
