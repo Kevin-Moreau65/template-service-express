@@ -5,13 +5,12 @@ COPY package.json .
 COPY tsconfig.json .
 RUN npm i
 ADD ./src ./src
-RUN npm run build
+RUN npm run build && mkdir /temp && cp -r ./build ./temp/build
 
 # Build Stage 2
 FROM node:16-alpine
 WORKDIR /app-build
-COPY package.json .
+COPY package.json --from=appbuild /app-src/temp .
 RUN npm i --omit=dev
-COPY --from=appbuild /app-src/build ./build
 EXPOSE 8080
 CMD npm run start
