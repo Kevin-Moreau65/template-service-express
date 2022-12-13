@@ -2,6 +2,7 @@
 FROM node:16-alpine AS appbuild
 WORKDIR /app-src
 COPY package.json .
+COPY tsconfig.json .
 RUN npm i
 ADD ./src ./src
 RUN npm run build
