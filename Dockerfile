@@ -5,7 +5,7 @@ COPY package.json .
 COPY tsconfig.json .
 RUN npm i
 ADD ./src ./src
-RUN npm run build && mkdir /temp && cp -r ./build ./temp/build
+RUN npm run build && mkdir ./temp && cp -r ./build ./temp/build
 
 # Build Stage 2
 FROM node:16-alpine
