@@ -13,4 +13,5 @@ WORKDIR /app-build
 COPY --from=appbuild /app-src/package.json /app-src/temp .
 RUN npm i --omit=dev
 EXPOSE 8080
+ENV SERVER_PORT=8080
 CMD npm run start
