@@ -1,16 +1,21 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "module": "commonjs",
-    "lib": ["es6"],
-    "allowJs": true,
+    "module": "CommonJS",
+    "lib": ["es6",
+    "dom",
+    "dom.iterable",
+    "esnext"],
+    "moduleResolution": "node",
     "outDir": "build",
-    "rootDir": "src",
     "strict": true,
     "esModuleInterop": true,
     "types": ["node", "jest"],
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "baseUrl": ".", 
+    "paths": {
+    "@src/*": ["src/*"]
+}
   },
-  "include": ["src/**/*"],
-  "exclude": ["src/**/*.spec.ts"]
+  "include": ["src/**/*", "test/**/*"]
 }
