@@ -9,6 +9,6 @@ beforeAll(async () => {
 
 describe('GET /', () => {
   it('should return 200', async () => {
-    await request(server).get(`/`).expect(404);
+    await request(server).get(`/`).expect(200);
   });
 });
