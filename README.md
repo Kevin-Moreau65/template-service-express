@@ -4,12 +4,27 @@
 
 Ce template sert a générer une API typescript / expressjs rapidement sans configuration
 
-## 2.Configuration
+## 2.Env
 
-Regarder le `.env.example` pour regarder les variables d'environnement utilisé dans le template. <br/>
-Regarder le dossier `.github/workflows-example ` pour avoir des worflow déjà préfait.
+Regarder le `.env.example` pour regarder les variables d'environnement utilisé dans le template.
 
-## 3.Utilisation
+### a) SERVER_PORT
+
+Un nombre || string qui permet de définir le port d'écoute d'expressjs, le nombre part défault est 8080.
+
+## 3.Workflows
+
+Regarder le dossier `.github/workflows-example` pour avoir des worflow déjà préfait.
+
+### a) docker-image
+
+Génère une image docker
+
+### b) update-repo-flux
+
+Peux mettre a jour un repo surveillé par flux dans le cadre d'une automatisation.
+
+## 4.Utilisation
 
 ### a) Lancement
 
