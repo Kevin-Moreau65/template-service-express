@@ -8,6 +8,6 @@ module.exports = {
   moduleFileExtensions: [ 'ts', 'tsx', 'js', 'jsx', 'json', 'node' ],
   roots: [ '<rootDir>/test' ],
   moduleNameMapper: {
-    "@src/(.*)": "<rootDir>/src/$1"
+    "@/(.*)": "<rootDir>/src/$1"
   }
 };

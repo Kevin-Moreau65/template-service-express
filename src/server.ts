@@ -1,4 +1,5 @@
-import createServer from './app';
+import 'module-alias/register';
+import createServer from '@/app';
 import helmet from 'helmet';
 const startServer = () => {
   const app = createServer();

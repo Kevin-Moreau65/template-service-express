@@ -1,4 +1,4 @@
-import createServer from '@src/app';
+import createServer from '@/app';
 import request from 'supertest';
 import { Express } from 'express-serve-static-core';
 

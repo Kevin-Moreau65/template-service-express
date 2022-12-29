@@ -1,21 +1,53 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es2016",
     "module": "CommonJS",
-    "lib": ["es6",
-    "dom",
-    "dom.iterable",
-    "esnext"],
     "moduleResolution": "node",
     "outDir": "build",
     "strict": true,
+    "isolatedModules": true,
     "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
     "types": ["node", "jest"],
     "skipLibCheck": true,
     "baseUrl": ".", 
     "paths": {
-    "@src/*": ["src/*"]
+    "@/*": ["src/*"]
     }
   },
-  "include": ["src/**/*", "test/**/*"]
+  "include": ["src/**/*", "test/**/*"],
+  "ts-node": {
+    "require": ["tsconfig-paths/register"]
+},
+"ts-jest": {
+  "require": ["tsconfig-paths/register"]
 }
+}
+// {
+//   "compilerOptions": {
+//       "module": "commonjs",
+//       "target": "es2017",
+//       "rootDir": "./",
+//       "esModuleInterop": true,
+//       "skipLibCheck": true,
+//       "forceConsistentCasingInFileNames": true,
+//       "baseUrl": "./",
+//       "paths": {
+//           "@src/*": [
+//               "src/*"
+//           ],
+//           "$controllers/*": [
+//               "./controllers/*"
+//           ],
+//           "$utils/*": [
+//               "./utils/*"
+//           ],
+//           "$models/*": [
+//               "models/*"
+//           ]
+//       }
+//   },
+//   "ts-node": {
+//     "require": ["tsconfig-paths/register"]
+// }
+// }

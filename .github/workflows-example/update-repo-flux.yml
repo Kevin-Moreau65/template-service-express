@@ -1,0 +1,39 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+
+  update-repo:
+
+    runs-on: ubuntu-latest
+    env:
+      Repository: Repo-name
+      Image-name: Image-name
+      Path-file: 'File'
+      Message-commit: "message"
+      Branch: branch
+
+    steps:
+    -
+      name: Checkout Target Repository
+      uses: actions/checkout@v3
+      with:
+        repository: $Repository
+        path: other-repo
+        token: ${{ secrets.TOKEN_GIT }} 
+    -
+      name: Update values.yaml
+      uses: fjogeleit/yaml-update-action@main
+      with:
+        valueFile: $Path-file
+        propertyPath: 'spec.template.spec.containers[0].image'
+        value: ${{ secrets.DOCKER_USERNAME }}/$Image_name:${{github.sha}}
+        commitChange: true
+        branch: $Branch
+        repository: $Repository
+        message: $Message-commit
+        token: ${{secrets.TOKEN_GIT}}
+        workDir: other-repo
