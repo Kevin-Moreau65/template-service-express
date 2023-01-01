@@ -1,7 +1,7 @@
 {
-  "name": "typescript-starter",
+  "name": "typescript-express-template",
   "version": "1.0.0",
-  "description": "Test",
+  "description": "",
   "main": "server.js",
   "scripts": {
     "build": "rimraf ./build && tsc --project tsconfig.build.json",
