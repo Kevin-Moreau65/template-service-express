@@ -23,31 +23,3 @@
   "require": ["tsconfig-paths/register"]
 }
 }
-// {
-//   "compilerOptions": {
-//       "module": "commonjs",
-//       "target": "es2017",
-//       "rootDir": "./",
-//       "esModuleInterop": true,
-//       "skipLibCheck": true,
-//       "forceConsistentCasingInFileNames": true,
-//       "baseUrl": "./",
-//       "paths": {
-//           "@src/*": [
-//               "src/*"
-//           ],
-//           "$controllers/*": [
-//               "./controllers/*"
-//           ],
-//           "$utils/*": [
-//               "./utils/*"
-//           ],
-//           "$models/*": [
-//               "models/*"
-//           ]
-//       }
-//   },
-//   "ts-node": {
-//     "require": ["tsconfig-paths/register"]
-// }
-// }
