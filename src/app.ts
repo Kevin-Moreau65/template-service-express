@@ -1,7 +1,8 @@
 import cors from 'cors';
 import express from 'express';
 import helmet from 'helmet';
-
+import * as dotenv from 'dotenv';
+dotenv.config();
 const createServer = () => {
   const app = express();
   app.use(cors());
